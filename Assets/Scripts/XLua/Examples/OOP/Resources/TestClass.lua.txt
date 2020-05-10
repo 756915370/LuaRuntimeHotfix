@@ -1,0 +1,35 @@
+require("BaseClass")
+
+local class1 = BaseClass("Class1")
+
+local function class1Init(self)
+    print("class1Init")
+    
+end 
+
+local function Func(self)
+    print("class1Func")
+end
+
+class1.__init = class1Init
+
+class1.Func = Func
+
+local class2 = BaseClass("Class2",class1)
+
+local function class2Init(self)
+    print("class2Init")
+end
+
+class2.__init = class2Init
+
+-- result:
+-- class1Init
+-- class2Init
+--local class2Instance = class2.New()
+
+local class2Instance = class2.New()
+
+-- result
+-- class1Func
+class2Instance:Func()

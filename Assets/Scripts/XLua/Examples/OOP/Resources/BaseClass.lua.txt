@@ -1,0 +1,61 @@
+
+local _class = {}
+
+local function Init(obj, ...)
+    local create
+    create = function(classtype, ...)
+        if classtype.supper then
+            create(classtype.supper, ...)
+        end
+        if classtype.__init then
+            classtype.__init(obj, ...)
+        end
+    end
+
+    create(obj._class_type, ...)
+end
+
+local function New(classtype,...)
+    local obj = {}
+    obj._class_type = classtype
+    setmetatable(obj,{__index = _class[classtype]})
+    Init(obj,...)
+
+    return obj
+end
+
+function BaseClass(classname,supperclass)
+    local class_type = {}
+
+    
+    class_type.__init = false
+    class_type.__cname = classname
+    class_type.supper = supperclass
+    class_type.New = function(...)
+        return New(class_type, ...)
+    end
+
+    local vtbl = {}
+    _class[class_type] = vtbl
+    setmetatable(class_type, {
+        __newindex = function(table, key, value)
+            vtbl[key] = value
+        end,
+        __index = vtbl
+    })
+
+    if supperclass then
+        setmetatable(vtbl, {
+            __index = function(table, key)
+                return _class[supperclass][key]
+            end
+        })
+    end
+    
+    return class_type
+end
+
+print("load base class module")
+
+
+
