@@ -6,7 +6,7 @@ public class GameLaunch : MonoBehaviour
     {
         XLuaManager.Instance.Startup();
         XLuaManager.Instance.StartGame();
-        LuaFileWatcher.CreateLuaFileWatcher();
+        LuaFileWatcher.CreateLuaFileWatcher(XLuaManager.Instance.luaEnv);
     }
 
     private void Update()
