@@ -23,7 +23,7 @@ end
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200510221922378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2o3NTY5MTUzNzA=,size_16,color_FFFFFF,t_70)
 ***
 工程里各个脚本的作用:
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200510221229784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2o3NTY5MTUzNzA=,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200510221229784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2o3NTY5MTUzNzA=,size_16,color_FFFFFF,t_70) 
 #### 左边是C#文件:
 - **LuaFileWatcher**，检测lua文件发生变化，当发生变化时调用Hotfix.lua进行重载模块的操作。
 - **GameLaunch**，启动LuaFileWatcher，启动XLuaManager
@@ -34,3 +34,11 @@ end
 - **PlayerMove**，继承自BaseClass，控制方块移动
 - **BaseClass**，面向对象编程里的基类
 - **Hotfix**，重载lua模块
+***
+#### 关于代码的讲解:  
+ - [【Lua运行时热更新①】检测Lua文件发生变化](https://zhuanlan.zhihu.com/p/139548726)  
+ - [【Lua运行时热更新②】重载Lua模块、替换函数](https://zhuanlan.zhihu.com/p/139549412)  
+
+CSDN博客：[https://blog.csdn.net/j756915370](https://blog.csdn.net/j756915370)  
+知乎专栏：[https://zhuanlan.zhihu.com/c_1241442143220363264](https://zhuanlan.zhihu.com/c_1241442143220363264)  
+Q群：891809847
