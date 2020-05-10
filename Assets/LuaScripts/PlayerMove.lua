@@ -10,7 +10,7 @@ end
 
 local function Update(self,deltaTime)
     local verticalInput = CS.UnityEngine.Input.GetAxis("Vertical")
-    local movement = self.transform.forward * verticalInput * -10 * deltaTime
+    local movement = self.transform.forward * verticalInput * 10 * deltaTime
     self.rigidbody:MovePosition(self.rigidbody.position + movement)
 end
 
@@ -36,10 +36,8 @@ local count = 1
 PlayerMove.Start = Start
 PlayerMove.Update = Update
 PlayerMove.TestFunc = function()
-    --count = count + 1
-    --print("count:",count)
-    --print("热更")
-    print("热更2")
+    count = count + 1
+    print("count:",count)
 end
 PlayerMove.OnReload = OnReload
 return PlayerMove

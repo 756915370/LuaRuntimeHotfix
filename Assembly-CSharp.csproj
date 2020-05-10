@@ -137,7 +137,6 @@
     <Compile Include="Assets\Scripts\XLua\Gen\XLuaTestMyStructWrap.cs" />
     <Compile Include="Assets\Scripts\XLua\Gen\XLuaTestNoGcWrap.cs" />
     <Compile Include="Assets\Scripts\XLua\Gen\XLuaTestPeddingWrap.cs" />
-    <Compile Include="Assets\Scripts\XLua\LuaUpdater.cs" />
     <Compile Include="Assets\Scripts\XLua\Src\CodeEmit.cs" />
     <Compile Include="Assets\Scripts\XLua\Src\CopyByValue.cs" />
     <Compile Include="Assets\Scripts\XLua\Src\DelegateBridge.cs" />

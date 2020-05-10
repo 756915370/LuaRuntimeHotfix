@@ -57,10 +57,6 @@ end
 function update_table(new_table, old_table)
     assert("table" == type(new_table))
     assert("table" == type(old_table))
-
-    if new_table == old_table then
-        return
-    end
     
     -- Compare 2 tables, and update old table.
     for key, value in pairs(new_table) do
@@ -71,7 +67,6 @@ function update_table(new_table, old_table)
             old_table[key] = value
         elseif type_value == "table" then
             update_table(value, old_value)
-        --    old_table[key] = value
         end
     end 
 
