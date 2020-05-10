@@ -1,8 +1,13 @@
 # LuaRuntimeHotfix
 This project demonstrates the unity editor's ability to **make lua changes take effect immediately without replay the game.** 
 
-这个工程展示了**unity编辑器下不需要重启游戏就能让lua文件改动后立刻生效**的功能。
-
+这个工程展示了**unity编辑器下不需要重启游戏就能让lua文件改动后立刻生效**的功能。  
+目前实现的功能:
+- **保留旧模块的数据，替换旧模块的函数**
+- **其它模块缓存了旧模块的函数的处理**
+- **upvalue值的处理**
+- **需要更新的模块的元表的处理**  
+***
 打开工程里的场景SampleScene，里面是一个方块，功能很简单，按上下可以移动方块。其中逻辑是写在lua里面的。
 - **如何验证热重载功能？**   
 改动PlayerMove.lua的update函数，比如把10改成-10，会发现方块会倒着走了。
