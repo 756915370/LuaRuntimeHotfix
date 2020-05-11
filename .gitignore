@@ -1,5 +1,7 @@
 Library/
 Temp/
 .idea/
-obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache
-obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+obj/
+Tolua_RuntimeHotfix/Library/
+Tolua_RuntimeHotfix/Temp/
+Tolua_RuntimeHotfix/obj/
