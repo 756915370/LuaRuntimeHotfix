@@ -42,9 +42,7 @@ end
 - **Hotfix**，重载lua模块
 ***
 #### 关于代码的讲解:  
- - [【Lua运行时热更新①】检测Lua文件发生变化](https://zhuanlan.zhihu.com/p/139548726)  
- - [【Lua运行时热更新②】重载Lua模块、替换函数](https://zhuanlan.zhihu.com/p/139549412)  
+ - [【Lua运行时热更新①】检测Lua文件发生变化](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A0.md)  
+ - [【Lua运行时热更新②】重载Lua模块、替换函数](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A1.md) 
 
-CSDN博客：[https://blog.csdn.net/j756915370](https://blog.csdn.net/j756915370)  
-知乎专栏：[https://zhuanlan.zhihu.com/c_1241442143220363264](https://zhuanlan.zhihu.com/c_1241442143220363264)  
 Q群：891809847

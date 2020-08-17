@@ -121,11 +121,3 @@ public  class LuaFileWatcher
 这一步是**Reload**这个函数的主要内容，当然这个函数里还需要调用lua端的方法，这部分内容下篇文章再说，今天先做到能够打印出需要修改的全部模块路径。
 ***
 关于第一步**检测哪些lua文件发生变化**的代码就讲解到这里，剩下的内容下一篇文章进行讲解。
-
-系列文章：
-[【Lua运行时热重载功能实现①】检测Lua文件发生变化](https://blog.csdn.net/j756915370/article/details/106039151)
-[【Lua运行时热重载功能实现②】重载Lua模块、替换函数](https://blog.csdn.net/j756915370/article/details/106043421)
-***
-CSDN博客：[https://blog.csdn.net/j756915370](https://blog.csdn.net/j756915370)
-知乎专栏：[https://zhuanlan.zhihu.com/c_1241442143220363264](https://zhuanlan.zhihu.com/c_1241442143220363264)
-Q群：891809847

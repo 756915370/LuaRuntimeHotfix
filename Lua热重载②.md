@@ -189,11 +189,3 @@ end
 - **table.insert** 用于往表插入元素
 
 这就是为什么**OnReload**里面判断了一下是**class**还是**instance**的原因。
-***
-系列文章：
-[【Lua运行时热重载功能实现①】检测Lua文件发生变化](https://blog.csdn.net/j756915370/article/details/106039151)
-[【Lua运行时热重载功能实现②】重载Lua模块、替换函数](https://blog.csdn.net/j756915370/article/details/106043421)
-***
-CSDN博客：[https://blog.csdn.net/j756915370](https://blog.csdn.net/j756915370)
-知乎专栏：[https://zhuanlan.zhihu.com/c_1241442143220363264](https://zhuanlan.zhihu.com/c_1241442143220363264)
-Q群：891809847
