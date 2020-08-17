@@ -20,12 +20,14 @@ function hotfix(filename)
     end
 
     local newModule = package.loaded[filename]
-    
-    update_table(newModule, oldModule)
+
+    local updated_tables = {}
+    update_table(newModule, oldModule,updated_tables)
 
     if oldModule.OnReload ~= nil then
         oldModule:OnReload()
     end
+
     print('replaced succeed')
     package.loaded[filename] = oldModule
 end
@@ -50,14 +52,14 @@ function update_func(new_func, old_func)
         local old_value = old_upvalue_map[name]
         if old_value then
             debug.setupvalue(new_func, i, old_value)
-        end  
-    end 
+        end
+    end
 end
 
-function update_table(new_table, old_table)
+function update_table(new_table, old_table, updated_tables)
     assert("table" == type(new_table))
     assert("table" == type(old_table))
-    
+
     -- Compare 2 tables, and update old table.
     for key, value in pairs(new_table) do
         local old_value = old_table[key]
@@ -66,14 +68,17 @@ function update_table(new_table, old_table)
             update_func(value, old_value)
             old_table[key] = value
         elseif type_value == "table" then
-            update_table(value, old_value)
+            if ( updated_tables[value] == nil ) then
+                updated_tables[value] = true
+                update_table(value, old_value,updated_tables)
+            end
         end
-    end 
+    end
 
     -- Update metatable.
     local old_meta = debug.getmetatable(old_table)
     local new_meta = debug.getmetatable(new_table)
     if type(old_meta) == "table" and type(new_meta) == "table" then
-        update_table(new_meta, old_meta)
+        update_table(new_meta, old_meta,updated_tables)
     end
 end
