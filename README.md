@@ -7,7 +7,7 @@ This project demonstrates the unity editor's ability to **make lua changes take 
 - **其它模块缓存了旧模块的函数的处理**
 - **upvalue值的处理**
 - **需要更新的模块的元表的处理** 
-- **处理了表循环引用导致无限递归的情况**
+- **处理了表循环引用导致无限递归的情况**（2020.8.17更新）
 ***
 使用的unity版本是2019.3.0，**根目录下是xlua版本的工程** ，[**/Tolua_RuntimeHotfix**](https://github.com/756915370/LuaRuntimeHotfix/tree/master/Tolua_RuntimeHotfix)是tolua版本的工程。  
 - **package.load[filename] 获取已加载的模块失败怎么办？**   
@@ -43,6 +43,6 @@ end
 ***
 #### 关于代码的讲解:  
  - [【Lua运行时热更新①】检测Lua文件发生变化](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A0.md)  
- - [【Lua运行时热更新②】重载Lua模块、替换函数](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A1.md) 
+ - [【Lua运行时热更新②】重载Lua模块、替换函数](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A1.md) （2020.8.17 更新）
 
 Q群：891809847

@@ -38,7 +38,7 @@ end
 #### update_table
 
 ```csharp
-function update_table(new_table, old_table)
+function update_table(new_table, old_table, updated_tables)
     assert("table" == type(new_table))
     assert("table" == type(old_table))
     
@@ -50,7 +50,10 @@ function update_table(new_table, old_table)
             update_func(value, old_value)
             old_table[key] = value
         elseif type_value == "table" then
-            update_table(value, old_value)
+            if ( updated_tables[value] == nil ) then
+                updated_tables[value] = true
+                update_table(value, old_value,updated_tables)
+            end
         end
     end 
 
@@ -58,12 +61,14 @@ function update_table(new_table, old_table)
     local old_meta = debug.getmetatable(old_table)
     local new_meta = debug.getmetatable(new_table)
     if type(old_meta) == "table" and type(new_meta) == "table" then
-        update_table(new_meta, old_meta)
+        update_table(new_meta, old_meta,updated_tables)
     end
 end
 ```
 这个函数用于更新旧表，首先断言这两个参数的类型是不是table。
+**需要考虑到表的循环引用问题否则会出现无限递归，所以额外传入一个表用来记录哪些表已经更新了，如果更新了记录下来，下次执行代码时不会再次递归。**
 然后遍历表里面的元素，有三种情况：**数据**、**函数**、**表**。
+
 - **数据不做处理**，让旧表保留旧的数据。
 - **函数，需要处理upvalue值**，处理完之后，**替换旧表里的旧函数**。
 - **表**，嵌套调用**update_table**
