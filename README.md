@@ -8,6 +8,11 @@ This project demonstrates the unity editor's ability to **make lua changes take 
 - **upvalue值的处理**
 - **需要更新的模块的元表的处理**  
 ***
+使用的unity版本是2019.3.0，**根目录下是xlua版本的工程** ，[**/Tolua_RuntimeHotfix**](https://github.com/756915370/LuaRuntimeHotfix/tree/master/Tolua_RuntimeHotfix)是tolua版本的工程。  
+- **package.load[filename] 获取已加载的模块失败怎么办？**   
+请检查是不是**filename**这个变量传入有误，**FileSystemEventArgs.FullPath**是文件的完整路径，如 **"F:\Git\LuaRuntimeHotfix\Assets\LuaScripts\NewDirectory1\Test.lua"**,需要转化成 **"NewDirectory1.Test"** 才能正确的调用**package.load**。  
+关于文件路径转化的代码在**LuaFileWatcher.cs**，如果有需要请自行修改。
+***
 打开工程里的场景SampleScene，里面是一个方块，功能很简单，按上下可以移动方块。其中逻辑是写在lua里面的。
 - **如何验证热重载功能？**   
 改动PlayerMove.lua的update函数，比如把10改成-10，会发现方块会倒着走了。
