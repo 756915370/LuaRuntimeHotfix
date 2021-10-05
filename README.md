@@ -45,4 +45,4 @@ end
  - [【Lua运行时热更新①】检测Lua文件发生变化](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A0.md)  
  - [【Lua运行时热更新②】重载Lua模块、替换函数](https://github.com/756915370/LuaRuntimeHotfix/blob/master/Lua%E7%83%AD%E9%87%8D%E8%BD%BD%E2%91%A1.md) （2020.8.17 更新）
 
-Q群：891809847
+游戏聊天群：891809847
